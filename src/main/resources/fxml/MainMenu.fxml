@@ -8,13 +8,13 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainMenu">
    <children>
-      <Label layoutX="6.0" layoutY="14.0" text="Main Menu">
+      <Label layoutX="6.0" layoutY="14.0" text="Controllers.Main Menu">
          <font>
             <Font name="Georgia" size="36.0" />
          </font>
       </Label>
       <Line endX="409.8929443359375" endY="-1.1444091796875E-5" layoutX="191.0" layoutY="55.0" startX="-191.0" startY="-1.1444091796875E-5" />
-      <Button fx:id="logoutButton" layoutX="412.0" layoutY="21.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #f20000;" text="Logout" textFill="WHITE">
+      <Button layoutX="412.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #f20000;" text="Logout" textFill="WHITE">
          <font>
             <Font name="Georgia" size="12.0" />
          </font>

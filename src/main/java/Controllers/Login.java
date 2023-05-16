@@ -8,21 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class Login {
 
     @FXML
     private TextField UsernameField;
     @FXML
-    private TextField PasswordField; //no futuro mudar para password field
+    private PasswordField PasswordField;
 
     private Stage stage;
     private Scene scene;
@@ -47,15 +44,10 @@ public class Login {
 
     //Database Connection
     private boolean authenticate(String username, String password) {
-        // Replace the following code with your own database connection logic
-        String url = "jdbc:postgresql://localhost:5432/proj2";
-        String user = "postgres";
-        String pass = "123";
+        DatabaseConnection connection = new DatabaseConnection();
 
-        //Passar conexão á base de dados para uma classe separada
-
-        try (Connection conn = DriverManager.getConnection(url, user, pass);
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM \"Funcionário\" WHERE username = ? AND password = ?")){
+        try (Connection conn = connection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM \"Funcionário\" WHERE username = ? AND password = ?")) {
             stmt.setString(1, username);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
@@ -63,6 +55,8 @@ public class Login {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        } finally {
+            connection.closeConnection();
         }
     }
 

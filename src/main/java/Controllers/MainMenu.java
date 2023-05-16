@@ -16,6 +16,13 @@ public class MainMenu {
     private Scene scene;
     private Parent root;
 
+    //Logout Button
+    @FXML
+    public void handleLogout(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
+        switchScene(event);
+    }
+
     //Adicionar Matéria Prima Button
     @FXML
     public void handleAdicionarMatériaPrima(ActionEvent event) throws IOException {
