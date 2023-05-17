@@ -1,8 +1,10 @@
 package Controllers;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.DriverManager;
 
 public class DatabaseConnection {
     private static final String URL = "jdbc:postgresql://localhost:5432/proj2";
@@ -31,5 +33,23 @@ public class DatabaseConnection {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    // Retrieve the last generated ID from a sequence in the database
+    public int getGeneratedId(String sequenceName) {
+        int generatedId = 0;
+        String sql = "SELECT last_value FROM " + sequenceName;
+
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                generatedId = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return generatedId;
     }
 }

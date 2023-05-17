@@ -14,9 +14,6 @@ public class Lote {
     @Column(name = "id_funcionário")
     private int idFuncionário;
     @Basic
-    @Column(name = "id_item")
-    private int idItem;
-    @Basic
     @Column(name = "custo")
     private double custo;
     @Basic
@@ -43,14 +40,6 @@ public class Lote {
 
     public void setIdFuncionário(int idFuncionário) {
         this.idFuncionário = idFuncionário;
-    }
-
-    public int getIdItem() {
-        return idItem;
-    }
-
-    public void setIdItem(int idItem) {
-        this.idItem = idItem;
     }
 
     public double getCusto() {
@@ -85,16 +74,24 @@ public class Lote {
         this.estadoLote = estadoLote;
     }
 
+    public Lote(int idFuncionário, double custo, Date dataCriação, Date dataValidade, String estadoLote) {
+        this.idFuncionário = idFuncionário;
+        this.custo = custo;
+        this.dataCriação = dataCriação;
+        this.dataValidade = dataValidade;
+        this.estadoLote = estadoLote;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Lote lote = (Lote) o;
-        return idLote == lote.idLote && idFuncionário == lote.idFuncionário && idItem == lote.idItem && Double.compare(lote.custo, custo) == 0 && Objects.equals(dataCriação, lote.dataCriação) && Objects.equals(dataValidade, lote.dataValidade) && Objects.equals(estadoLote, lote.estadoLote);
+        return idLote == lote.idLote && idFuncionário == lote.idFuncionário && Double.compare(lote.custo, custo) == 0 && Objects.equals(dataCriação, lote.dataCriação) && Objects.equals(dataValidade, lote.dataValidade) && Objects.equals(estadoLote, lote.estadoLote);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idLote, idFuncionário, idItem, custo, dataCriação, dataValidade, estadoLote);
+        return Objects.hash(idLote, idFuncionário, custo, dataCriação, dataValidade, estadoLote);
     }
 }

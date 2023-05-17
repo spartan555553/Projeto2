@@ -43,6 +43,16 @@ public class MatériaPrimaLote {
         this.quantidade = quantidade;
     }
 
+    public MatériaPrimaLote() {
+        // Empty constructor required by JPA
+    }
+
+    public MatériaPrimaLote(int idMatériaPrima, int idLote, int quantidade) {
+        this.idMatériaPrima = idMatériaPrima;
+        this.idLote = idLote;
+        this.quantidade = quantidade;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -23,6 +23,17 @@ public class MatériaPrima {
     @Column(name = "descrição")
     private String descrição;
 
+    public MatériaPrima() {
+        // Empty constructor required by JPA
+    }
+
+    public MatériaPrima(int idFornecedor, String tipoMatériaPrima, Double custoUnitário, String descrição) {
+        this.idFornecedor = idFornecedor;
+        this.tipoMatériaPrima = tipoMatériaPrima;
+        this.custoUnitário = custoUnitário;
+        this.descrição = descrição;
+    }
+
     public int getIdMatériaPrima() {
         return idMatériaPrima;
     }

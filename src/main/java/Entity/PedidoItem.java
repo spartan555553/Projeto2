@@ -19,6 +19,9 @@ public class PedidoItem {
     @Basic
     @Column(name = "custo_unitário")
     private double custoUnitário;
+    @Basic
+    @Column(name = "id_lote")
+    private int idLote;
 
     public int getIdItem() {
         return idItem;
@@ -50,6 +53,13 @@ public class PedidoItem {
 
     public void setCustoUnitário(double custoUnitário) {
         this.custoUnitário = custoUnitário;
+    }
+
+    public int getIdLote() {
+        return idLote;
+    }
+
+    public void setIdLote(int idLote) { this.idLote = idLote;
     }
 
     @Override
