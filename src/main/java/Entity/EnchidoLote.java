@@ -19,6 +19,16 @@ public class EnchidoLote {
     @Column(name = "quantidade")
     private int quantidade;
 
+    public EnchidoLote() {
+        // Empty constructor required by JPA
+    }
+
+    public EnchidoLote(int idEnchido, int idLote, int quantidade) {
+        this.idEnchido = idEnchido;
+        this.idLote = idLote;
+        this.quantidade = quantidade;
+    }
+
     public int getIdEnchido() {
         return idEnchido;
     }

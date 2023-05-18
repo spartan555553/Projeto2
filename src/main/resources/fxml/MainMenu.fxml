@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainMenu">
    <children>
-      <Label layoutX="6.0" layoutY="14.0" text="Controllers.Main Menu">
+      <Label layoutX="6.0" layoutY="14.0" text="Main Menu">
          <font>
             <Font name="Georgia" size="36.0" />
          </font>

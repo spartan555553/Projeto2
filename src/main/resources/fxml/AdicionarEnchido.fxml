@@ -22,7 +22,7 @@
             <Font name="Georgia" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="404.0" layoutY="352.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #4F6EDE;" text="Concluir" textFill="WHITE">
+      <Button layoutX="404.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleAdicionarEnchido" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #4F6EDE;" text="Concluir" textFill="WHITE">
          <font>
             <Font name="Georgia" size="12.0" />
          </font>
@@ -50,7 +50,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="41.0" layoutY="106.0" prefHeight="27.0" prefWidth="234.0" style="-fx-border-color: #000000;" />
+      <TextField fx:id="tipoEnchidoField" layoutX="41.0" layoutY="106.0" prefHeight="27.0" prefWidth="234.0" style="-fx-border-color: #000000;" />
       <Label layoutX="444.0" layoutY="70.0" prefHeight="35.0" prefWidth="157.0" text="Custo Unitário">
          <font>
             <Font size="24.0" />

@@ -25,6 +25,16 @@ public class Enchido {
     @Column(name = "descrição")
     private String descrição;
 
+    public Enchido() {
+        // Empty constructor required by JPA
+    }
+
+    public Enchido(String tipoEnchido, Double custoUnitário, String descrição) {
+        this.tipoEnchido = tipoEnchido;
+        this.custoUnitário = custoUnitário;
+        this.descrição = descrição;
+    }
+
     public int getIdEnchido() {
         return idEnchido;
     }

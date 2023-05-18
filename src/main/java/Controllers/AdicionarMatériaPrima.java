@@ -91,7 +91,6 @@ public class AdicionarMatériaPrima implements Initializable {
 
         Funcionário loggedInFuncionário = Login.getLoggedInFuncionário();
         int idFuncionário = loggedInFuncionário.getIdFuncionário();
-        Integer idItem = null; // Initialize with null
         double custo = quantidade * custoUnitário;
 
         // Get the current date
