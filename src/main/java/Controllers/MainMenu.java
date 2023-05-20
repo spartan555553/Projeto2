@@ -25,43 +25,22 @@ public class MainMenu {
 
     //Adicionar Matéria Prima Button
     @FXML
-    public void handleAdicionarMatériaPrima(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/AdicionarMatériaPrima.fxml"));
+    public void handleMateriasPrimasButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/StockMateriasPrimas.fxml"));
         switchScene(event);
     }
 
     //Adicionar Enchidos Button
     @FXML
-    public void handleAdicionarEnchido(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/AdicionarEnchido.fxml"));
-        switchScene(event);
-    }
-
-    //Fase Produção Button
-    @FXML
-    public void handleFaseProdução(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/FaseProdução.fxml"));
-        switchScene(event);
-    }
-
-    //Listar Matérias Primas Button
-    @FXML
-    public void handleListarMatériasPrimas(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/ListarMatériasPrimas.fxml"));
-        switchScene(event);
-    }
-
-    //Listar Enchidos Button
-    @FXML
-    public void handleListarEnchidos(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/ListarEnchidos.fxml"));
+    public void handleEnchidosButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/StockEnchidos.fxml"));
         switchScene(event);
     }
 
     //Adicionar Fornecedor Button
     @FXML
-    public void handleAdicionarFornecedor(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/AdicionarFornecedor.fxml"));
+    public void handleFornecedoresButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/ListarFornecedores.fxml"));
         switchScene(event);
     }
 

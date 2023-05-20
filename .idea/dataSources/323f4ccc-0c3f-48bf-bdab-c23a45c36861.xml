@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>870</IntrospectionStateNumber>
+      <IntrospectionStateNumber>979</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
-      <StartupTime>1683877015</StartupTime>
+      <StartupTime>1684503031</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -806,7 +806,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>870</IntrospectionStateNumber>
+      <IntrospectionStateNumber>979</IntrospectionStateNumber>
       <ObjectId>16456</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -5886,171 +5886,209 @@ false Zulu
     <schema id="262" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>870</IntrospectionStateNumber>
+      <IntrospectionStateNumber>979</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="263" parent="262" name="fornecedor_id_seq">
-      <DasType>bigint|0s</DasType>
-      <ObjectId>24649</ObjectId>
-      <SequenceIdentity>1(4)</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>810</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <sequence id="264" parent="262" name="lote_id_seq">
-      <DasType>bigint|0s</DasType>
-      <ObjectId>24667</ObjectId>
-      <SequenceIdentity>1(2)</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>869</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <sequence id="265" parent="262" name="matéria_prima_id_seq">
-      <DasType>bigint|0s</DasType>
-      <ObjectId>24651</ObjectId>
-      <SequenceIdentity>1(16)</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>813</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <table id="266" parent="262" name="Cliente">
-      <ObjectId>16471</ObjectId>
-      <StateNumber>777</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="267" parent="262" name="Enchido">
-      <ObjectId>16585</ObjectId>
-      <StateNumber>781</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="268" parent="262" name="Enchido_Lote">
-      <ObjectId>16582</ObjectId>
-      <StateNumber>781</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="269" parent="262" name="Entrega">
-      <ObjectId>16485</ObjectId>
-      <StateNumber>749</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="270" parent="262" name="Fornecedor">
-      <ObjectId>16457</ObjectId>
-      <StateNumber>785</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="271" parent="262" name="Funcionário">
-      <ObjectId>16464</ObjectId>
-      <StateNumber>786</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="272" parent="262" name="Lote">
-      <ObjectId>16540</ObjectId>
-      <StateNumber>798</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="273" parent="262" name="Matéria-prima">
-      <ObjectId>16520</ObjectId>
-      <StateNumber>761</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="274" parent="262" name="Matéria-prima_Lote">
-      <ObjectId>16545</ObjectId>
-      <StateNumber>865</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="275" parent="262" name="Pedido_Cliente">
-      <ObjectId>16502</ObjectId>
-      <StateNumber>790</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="276" parent="262" name="Pedido_Item">
-      <ObjectId>16515</ObjectId>
-      <StateNumber>820</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="277" parent="262" name="Transportadora">
-      <ObjectId>16478</ObjectId>
-      <StateNumber>795</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <column id="278" parent="266" name="id_cliente">
+    <sequence id="263" parent="262" name="Cliente_id_cliente_seq">
       <DasType>integer|0s</DasType>
+      <ObjectId>24728</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>925</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="264" parent="262" name="Enchido_id_enchido_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>24729</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>933</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="265" parent="262" name="Entrega_id_entrega_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>24730</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>938</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="266" parent="262" name="Fornecedor_id_fornecedor_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>24731</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>939</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="267" parent="262" name="Funcionario_id_funcionario_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>24732</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>940</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="268" parent="262" name="Lote_id_lote_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>24733</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>941</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="269" parent="262" name="MateriaPrima_id_materiaPrima_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>24734</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>943</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="270" parent="262" name="Pedido_Cliente_id_pedido_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>24735</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>944</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="271" parent="262" name="Transportadora_id_transportadora_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>24736</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>945</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="272" parent="262" name="cliente">
+      <ObjectId>16471</ObjectId>
+      <StateNumber>960</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="273" parent="262" name="enchido">
+      <ObjectId>16585</ObjectId>
+      <StateNumber>961</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="274" parent="262" name="entrega">
+      <ObjectId>16485</ObjectId>
+      <StateNumber>962</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="275" parent="262" name="fornecedor">
+      <ObjectId>16457</ObjectId>
+      <StateNumber>963</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="276" parent="262" name="funcionario">
+      <ObjectId>16464</ObjectId>
+      <StateNumber>964</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="277" parent="262" name="lote">
+      <ObjectId>16540</ObjectId>
+      <StateNumber>965</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="278" parent="262" name="materia_prima">
+      <ObjectId>16520</ObjectId>
+      <StateNumber>973</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="279" parent="262" name="pedido_cliente">
+      <ObjectId>16502</ObjectId>
+      <StateNumber>967</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="280" parent="262" name="pedido_item">
+      <ObjectId>16515</ObjectId>
+      <StateNumber>968</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="281" parent="262" name="transportadora">
+      <ObjectId>16478</ObjectId>
+      <StateNumber>969</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="282" parent="272" name="id_cliente">
+      <DasType>integer|0s</DasType>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>746</StateNumber>
+      <StateNumber>925</StateNumber>
+      <SequenceId>24728</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="279" parent="266" name="nome">
+    <column id="283" parent="272" name="nome">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>746</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="280" parent="266" name="contacto">
+    <column id="284" parent="272" name="contacto">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>746</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="281" parent="266" name="morada">
+    <column id="285" parent="272" name="morada">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>777</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="282" parent="266" name="email">
+    <column id="286" parent="272" name="email">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>777</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="283" parent="266" name="nif">
+    <column id="287" parent="272" name="nif">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>777</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="284" parent="266" name="username">
+    <column id="288" parent="272" name="username">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StateNumber>777</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="285" parent="266" name="password">
+    <column id="289" parent="272" name="password">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StateNumber>777</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="286" parent="266" name="estado_conta">
+    <column id="290" parent="272" name="estado_conta">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StateNumber>777</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="287" parent="266" name="Clinte_pkey">
+    <index id="291" parent="272" name="Clinte_pkey">
       <ColNames>id_cliente</ColNames>
       <ObjectId>16476</ObjectId>
       <Primary>1</Primary>
@@ -6058,55 +6096,73 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="288" parent="266" name="Clinte_pkey">
+    <key id="292" parent="272" name="Clinte_pkey">
       <ObjectId>16477</ObjectId>
       <Primary>1</Primary>
       <StateNumber>746</StateNumber>
       <UnderlyingIndexId>16476</UnderlyingIndexId>
     </key>
-    <column id="289" parent="267" name="id_enchido">
+    <column id="293" parent="273" name="id_enchido">
       <DasType>integer|0s</DasType>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>780</StateNumber>
+      <StateNumber>933</StateNumber>
+      <SequenceId>24729</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="290" parent="267" name="id_lote">
+    <column id="294" parent="273" name="id_lote">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>780</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="291" parent="267" name="tipo_enchido">
+    <column id="295" parent="273" name="tipo_enchido">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>780</StateNumber>
+      <StateNumber>956</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="292" parent="267" name="custo_unitário">
+    <column id="296" parent="273" name="custo_unitario">
       <DasType>double precision|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>780</StateNumber>
+      <StateNumber>937</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="293" parent="267" name="fase_produção">
+    <column id="297" parent="273" name="fase_producao">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>780</StateNumber>
+      <StateNumber>936</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="294" parent="267" name="descrição">
+    <column id="298" parent="273" name="descricao">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>780</StateNumber>
+      <StateNumber>931</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="295" parent="267" name="Enchido_pkey">
+    <column id="299" parent="273" name="quantidade">
+      <DasType>integer|0s</DasType>
+      <Position>7</Position>
+      <StateNumber>953</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="300" parent="273" name="fk_id_lote">
+      <ColNames>id_lote</ColNames>
+      <ObjectId>32847</ObjectId>
+      <RefColNames>id_lote</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>977</StateNumber>
+      <RefTableId>16540</RefTableId>
+      <RefTableName>lote</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="301" parent="273" name="Enchido_pkey">
       <ColNames>id_enchido</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16590</ObjectId>
@@ -6115,92 +6171,46 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="296" parent="267" name="Enchido_pkey">
-      <NameSurrogate>1</NameSurrogate>
+    <key id="302" parent="273" name="Enchido_pkey">
       <ObjectId>16591</ObjectId>
       <Primary>1</Primary>
       <StateNumber>780</StateNumber>
       <UnderlyingIndexId>16590</UnderlyingIndexId>
     </key>
-    <column id="297" parent="268" name="id_enchido">
+    <column id="303" parent="274" name="id_entrega">
       <DasType>integer|0s</DasType>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>776</StateNumber>
+      <StateNumber>938</StateNumber>
+      <SequenceId>24730</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="298" parent="268" name="id_lote">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>776</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="299" parent="268" name="quantidade">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>776</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="300" parent="268" name="fk_id_enchido">
-      <ColNames>id_enchido</ColNames>
-      <ObjectId>16592</ObjectId>
-      <RefColNames>id_enchido</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>797</StateNumber>
-      <RefTableId>16585</RefTableId>
-      <RefTableName>Enchido</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="301" parent="268" name="fk_id_lote">
-      <ColNames>id_lote</ColNames>
-      <ObjectId>16598</ObjectId>
-      <RefColNames>id_lote</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>784</StateNumber>
-      <RefTableId>16540</RefTableId>
-      <RefTableName>Lote</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="302" parent="268" name="fki_fk_id_enchido">
-      <ColNames>id_enchido</ColNames>
-      <ObjectId>16597</ObjectId>
-      <StateNumber>782</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <column id="303" parent="269" name="id_entrega">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>748</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="304" parent="269" name="id_transportadora">
+    <column id="304" parent="274" name="id_transportadora">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>748</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="305" parent="269" name="data_entrega">
+    <column id="305" parent="274" name="data_entrega">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>748</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <foreign-key id="306" parent="269" name="fk_id_transportadora">
+    <foreign-key id="306" parent="274" name="fk_id_transportadora">
       <ColNames>id_transportadora</ColNames>
       <ObjectId>16496</ObjectId>
       <RefColNames>id_transportadora</RefColNames>
       <RefColPositions>1</RefColPositions>
       <StateNumber>753</StateNumber>
       <RefTableId>16478</RefTableId>
-      <RefTableName>Transportadora</RefTableName>
+      <RefTableName>transportadora</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="307" parent="269" name="Entrega_pkey">
+    <index id="307" parent="274" name="Entrega_pkey">
       <ColNames>id_entrega</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16488</ObjectId>
@@ -6209,68 +6219,68 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="308" parent="269" name="fki_i">
+    <index id="308" parent="274" name="fki_i">
       <ColNames>id_transportadora</ColNames>
       <ObjectId>16501</ObjectId>
       <StateNumber>754</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="309" parent="269" name="fki_id_transportadora">
+    <index id="309" parent="274" name="fki_id_transportadora">
       <ColNames>id_transportadora</ColNames>
       <ObjectId>16495</ObjectId>
       <StateNumber>750</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="310" parent="269" name="Entrega_pkey">
-      <NameSurrogate>1</NameSurrogate>
+    <key id="310" parent="274" name="Entrega_pkey">
       <ObjectId>16489</ObjectId>
       <Primary>1</Primary>
       <StateNumber>748</StateNumber>
       <UnderlyingIndexId>16488</UnderlyingIndexId>
     </key>
-    <column id="311" parent="270" name="id_fornecedor">
+    <column id="311" parent="275" name="id_fornecedor">
       <DasType>integer|0s</DasType>
-      <DefaultExpression>nextval(&apos;fornecedor_id_seq&apos;::regclass)</DefaultExpression>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>810</StateNumber>
+      <StateNumber>939</StateNumber>
+      <SequenceId>24731</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="312" parent="270" name="nome">
+    <column id="312" parent="275" name="nome">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>744</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="313" parent="270" name="contacto">
+    <column id="313" parent="275" name="contacto">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>744</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="314" parent="270" name="morada">
+    <column id="314" parent="275" name="morada">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>785</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="315" parent="270" name="email">
+    <column id="315" parent="275" name="email">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>785</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="316" parent="270" name="website">
+    <column id="316" parent="275" name="website">
       <DasType>varchar|0s</DasType>
       <Position>6</Position>
       <StateNumber>785</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="317" parent="270" name="Fornecedor_pkey">
+    <index id="317" parent="275" name="Fornecedor_pkey">
       <ColNames>id_fornecedor</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16462</ObjectId>
@@ -6279,146 +6289,146 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="318" parent="270" name="Fornecedor_pkey">
-      <NameSurrogate>1</NameSurrogate>
+    <key id="318" parent="275" name="Fornecedor_pkey">
       <ObjectId>16463</ObjectId>
       <Primary>1</Primary>
       <StateNumber>744</StateNumber>
       <UnderlyingIndexId>16462</UnderlyingIndexId>
     </key>
-    <column id="319" parent="271" name="id_funcionário">
+    <column id="319" parent="276" name="id_funcionario">
       <DasType>integer|0s</DasType>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>940</StateNumber>
+      <SequenceId>24732</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="320" parent="271" name="nome">
+    <column id="320" parent="276" name="nome">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>745</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="321" parent="271" name="contacto">
+    <column id="321" parent="276" name="contacto">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>745</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="322" parent="271" name="morada">
+    <column id="322" parent="276" name="morada">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="323" parent="271" name="email">
+    <column id="323" parent="276" name="email">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="324" parent="271" name="nif">
+    <column id="324" parent="276" name="nif">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="325" parent="271" name="username">
+    <column id="325" parent="276" name="username">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="326" parent="271" name="password">
+    <column id="326" parent="276" name="password">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="327" parent="271" name="estado_conta">
+    <column id="327" parent="276" name="estado_conta">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="328" parent="271" name="Funcionário_pkey">
-      <ColNames>id_funcionário</ColNames>
-      <NameSurrogate>1</NameSurrogate>
+    <index id="328" parent="276" name="Funcionário_pkey">
+      <ColNames>id_funcionario</ColNames>
       <ObjectId>16469</ObjectId>
       <Primary>1</Primary>
       <StateNumber>745</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="329" parent="271" name="Funcionário_pkey">
-      <NameSurrogate>1</NameSurrogate>
+    <key id="329" parent="276" name="Funcionário_pkey">
       <ObjectId>16470</ObjectId>
       <Primary>1</Primary>
       <StateNumber>745</StateNumber>
       <UnderlyingIndexId>16469</UnderlyingIndexId>
     </key>
-    <column id="330" parent="272" name="id_lote">
+    <column id="330" parent="277" name="id_lote">
       <DasType>integer|0s</DasType>
-      <DefaultExpression>nextval(&apos;lote_id_seq&apos;::regclass)</DefaultExpression>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>869</StateNumber>
+      <StateNumber>941</StateNumber>
+      <SequenceId>24733</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="331" parent="272" name="id_funcionário">
+    <column id="331" parent="277" name="id_funcionario">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>764</StateNumber>
+      <StateNumber>947</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="332" parent="272" name="custo">
+    <column id="332" parent="277" name="custo">
       <DasType>double precision|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>787</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="333" parent="272" name="data_criação">
+    <column id="333" parent="277" name="data_criacao">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
-      <StateNumber>787</StateNumber>
+      <StateNumber>957</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="334" parent="272" name="data_validade">
+    <column id="334" parent="277" name="data_validade">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StateNumber>787</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="335" parent="272" name="estado_lote">
+    <column id="335" parent="277" name="estado_lote">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StateNumber>798</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="336" parent="272" name="fk_id_funcionário">
-      <ColNames>id_funcionário</ColNames>
+    <foreign-key id="336" parent="277" name="fk_id_funcionário">
+      <ColNames>id_funcionario</ColNames>
       <ObjectId>16548</ObjectId>
-      <RefColNames>id_funcionário</RefColNames>
+      <RefColNames>id_funcionario</RefColNames>
       <RefColPositions>1</RefColPositions>
       <StateNumber>766</StateNumber>
       <RefTableId>16464</RefTableId>
-      <RefTableName>Funcionário</RefTableName>
+      <RefTableName>funcionario</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="337" parent="272" name="Lote_pkey">
+    <index id="337" parent="277" name="Lote_pkey">
       <ColNames>id_lote</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16543</ObjectId>
@@ -6427,195 +6437,178 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="338" parent="272" name="fki_fk_id_funcionário">
-      <ColNames>id_funcionário</ColNames>
+    <index id="338" parent="277" name="fki_fk_id_funcionário">
+      <ColNames>id_funcionario</ColNames>
       <ObjectId>16553</ObjectId>
       <StateNumber>787</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="339" parent="272" name="Lote_pkey">
-      <NameSurrogate>1</NameSurrogate>
+    <key id="339" parent="277" name="Lote_pkey">
       <ObjectId>16544</ObjectId>
       <Primary>1</Primary>
       <StateNumber>764</StateNumber>
       <UnderlyingIndexId>16543</UnderlyingIndexId>
     </key>
-    <column id="340" parent="273" name="id_matéria_prima">
+    <column id="340" parent="278" name="id_materia_prima">
       <DasType>integer|0s</DasType>
-      <DefaultExpression>nextval(&apos;&quot;matéria_prima_id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>813</StateNumber>
+      <StateNumber>970</StateNumber>
+      <SequenceId>24734</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="341" parent="273" name="id_fornecedor">
+    <column id="341" parent="278" name="id_fornecedor">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>760</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="342" parent="273" name="tipo_matéria_prima">
+    <column id="342" parent="278" name="tipo_materia_prima">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>971</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="343" parent="273" name="custo_unitário">
+    <column id="343" parent="278" name="custo_unitario">
       <DasType>double precision|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>942</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="344" parent="273" name="descrição">
+    <column id="344" parent="278" name="descricao">
       <DasType>varchar|0s</DasType>
       <Position>5</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>901</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="345" parent="273" name="fk_id_fornecedor">
+    <column id="345" parent="278" name="quantidade">
+      <DasType>integer|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>952</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="346" parent="278" name="id_lote">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>973</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="347" parent="278" name="fk_id_fornecedor">
       <ColNames>id_fornecedor</ColNames>
       <ObjectId>16527</ObjectId>
       <RefColNames>id_fornecedor</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>761</StateNumber>
+      <StateNumber>903</StateNumber>
       <RefTableId>16457</RefTableId>
-      <RefTableName>Fornecedor</RefTableName>
+      <RefTableName>fornecedor</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="346" parent="273" name="Matéria-prima_pkey">
-      <ColNames>id_matéria_prima</ColNames>
-      <NameSurrogate>1</NameSurrogate>
+    <foreign-key id="348" parent="278" name="fk_id_lote">
+      <ColNames>id_lote</ColNames>
+      <ObjectId>32841</ObjectId>
+      <RefColNames>id_lote</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>978</StateNumber>
+      <RefTableId>16540</RefTableId>
+      <RefTableName>lote</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="349" parent="278" name="materiaPrima_pkey">
+      <ColNames>id_materia_prima</ColNames>
       <ObjectId>16525</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>760</StateNumber>
+      <StateNumber>902</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="347" parent="273" name="fki_fk_id_fornecedor">
+    <index id="350" parent="278" name="fki_fk_id_fornecedor">
       <ColNames>id_fornecedor</ColNames>
       <ObjectId>16532</ObjectId>
       <StateNumber>762</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="348" parent="273" name="Matéria-prima_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16526</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>760</StateNumber>
-      <UnderlyingIndexId>16525</UnderlyingIndexId>
-    </key>
-    <column id="349" parent="274" name="id_matéria_prima">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>765</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="350" parent="274" name="quantidade">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>765</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="351" parent="274" name="id_lote">
-      <DasType>integer|0s</DasType>
-      <Position>4</Position>
-      <StateNumber>865</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="352" parent="274" name="fk_id_matéria_prima">
-      <ColNames>id_matéria_prima</ColNames>
-      <ObjectId>16571</ObjectId>
-      <RefColNames>id_matéria_prima</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>867</StateNumber>
-      <RefTableId>16520</RefTableId>
-      <RefTableName>Matéria-prima</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="353" parent="274" name="fk_id_lote">
+    <index id="351" parent="278" name="fki_fk_id_lote">
       <ColNames>id_lote</ColNames>
-      <ObjectId>24662</ObjectId>
-      <RefColNames>id_lote</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>866</StateNumber>
-      <RefTableId>16540</RefTableId>
-      <RefTableName>Lote</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="354" parent="274" name="fki_fk_id_matéria_prima">
-      <ColNames>id_matéria_prima</ColNames>
-      <ObjectId>16576</ObjectId>
-      <StateNumber>774</StateNumber>
+      <ObjectId>32846</ObjectId>
+      <StateNumber>975</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <column id="355" parent="275" name="id_pedido">
+    <key id="352" parent="278" name="materiaPrima_pkey">
+      <ObjectId>16526</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>902</StateNumber>
+      <UnderlyingIndexId>16525</UnderlyingIndexId>
+    </key>
+    <column id="353" parent="279" name="id_pedido">
       <DasType>integer|0s</DasType>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>755</StateNumber>
+      <StateNumber>944</StateNumber>
+      <SequenceId>24735</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="356" parent="275" name="id_cliente">
+    <column id="354" parent="279" name="id_cliente">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>755</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="357" parent="275" name="id_entrega">
+    <column id="355" parent="279" name="id_entrega">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>790</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="358" parent="275" name="data_pedido">
+    <column id="356" parent="279" name="data_pedido">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StateNumber>790</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="359" parent="275" name="estado_pedido">
+    <column id="357" parent="279" name="estado_pedido">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StateNumber>790</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="360" parent="275" name="custo_total">
+    <column id="358" parent="279" name="custo_total">
       <DasType>double precision|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StateNumber>790</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <foreign-key id="361" parent="275" name="fk_id_cliente">
+    <foreign-key id="359" parent="279" name="fk_id_cliente">
       <ColNames>id_cliente</ColNames>
       <ObjectId>16509</ObjectId>
       <RefColNames>id_cliente</RefColNames>
       <RefColPositions>1</RefColPositions>
       <StateNumber>756</StateNumber>
       <RefTableId>16471</RefTableId>
-      <RefTableName>Cliente</RefTableName>
+      <RefTableName>cliente</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="362" parent="275" name="fk_id_entrega">
+    <foreign-key id="360" parent="279" name="fk_id_entrega">
       <ColNames>id_entrega</ColNames>
       <ObjectId>16614</ObjectId>
       <RefColNames>id_entrega</RefColNames>
       <RefColPositions>1</RefColPositions>
       <StateNumber>791</StateNumber>
       <RefTableId>16485</RefTableId>
-      <RefTableName>Entrega</RefTableName>
+      <RefTableName>entrega</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="363" parent="275" name="Pedido_Cliente_pkey">
+    <index id="361" parent="279" name="Pedido_Cliente_pkey">
       <ColNames>id_pedido</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16507</ObjectId>
@@ -6624,80 +6617,79 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="364" parent="275" name="fki_fk_id_cliente">
+    <index id="362" parent="279" name="fki_fk_id_cliente">
       <ColNames>id_cliente</ColNames>
       <ObjectId>16514</ObjectId>
       <StateNumber>757</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="365" parent="275" name="fki_fk_id_entrega">
+    <index id="363" parent="279" name="fki_fk_id_entrega">
       <ColNames>id_entrega</ColNames>
       <ObjectId>16619</ObjectId>
       <StateNumber>792</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="366" parent="275" name="Pedido_Cliente_pkey">
-      <NameSurrogate>1</NameSurrogate>
+    <key id="364" parent="279" name="Pedido_Cliente_pkey">
       <ObjectId>16508</ObjectId>
       <Primary>1</Primary>
       <StateNumber>755</StateNumber>
       <UnderlyingIndexId>16507</UnderlyingIndexId>
     </key>
-    <column id="367" parent="276" name="id_item">
+    <column id="365" parent="280" name="id_item">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>759</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="368" parent="276" name="id_pedido">
+    <column id="366" parent="280" name="id_pedido">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>759</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="369" parent="276" name="quantidade">
+    <column id="367" parent="280" name="quantidade">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>759</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="370" parent="276" name="custo_unitário">
+    <column id="368" parent="280" name="custo_unitário">
       <DasType>double precision|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>759</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="371" parent="276" name="id_lote">
+    <column id="369" parent="280" name="id_lote">
       <DasType>integer|0s</DasType>
       <Position>6</Position>
       <StateNumber>820</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="372" parent="276" name="fk_id_pedido">
+    <foreign-key id="370" parent="280" name="fk_id_pedido">
       <ColNames>id_pedido</ColNames>
       <ObjectId>16554</ObjectId>
       <RefColNames>id_pedido</RefColNames>
       <RefColPositions>1</RefColPositions>
       <StateNumber>768</StateNumber>
       <RefTableId>16502</RefTableId>
-      <RefTableName>Pedido_Cliente</RefTableName>
+      <RefTableName>pedido_cliente</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="373" parent="276" name="fk_id_lote">
+    <foreign-key id="371" parent="280" name="fk_id_lote">
       <ColNames>id_lote</ColNames>
       <ObjectId>24655</ObjectId>
       <RefColNames>id_lote</RefColNames>
       <RefColPositions>1</RefColPositions>
       <StateNumber>820</StateNumber>
       <RefTableId>16540</RefTableId>
-      <RefTableName>Lote</RefTableName>
+      <RefTableName>lote</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="374" parent="276" name="Pedido_Item_pkey">
+    <index id="372" parent="280" name="Pedido_Item_pkey">
       <ColNames>id_item</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16518</ObjectId>
@@ -6706,62 +6698,63 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="375" parent="276" name="fki_fk_id_pedido">
+    <index id="373" parent="280" name="fki_fk_id_pedido">
       <ColNames>id_pedido</ColNames>
       <ObjectId>16559</ObjectId>
       <StateNumber>769</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="376" parent="276" name="Pedido_Item_pkey">
-      <NameSurrogate>1</NameSurrogate>
+    <key id="374" parent="280" name="Pedido_Item_pkey">
       <ObjectId>16519</ObjectId>
       <Primary>1</Primary>
       <StateNumber>759</StateNumber>
       <UnderlyingIndexId>16518</UnderlyingIndexId>
     </key>
-    <column id="377" parent="277" name="id_transportadora">
+    <column id="375" parent="281" name="id_transportadora">
       <DasType>integer|0s</DasType>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>747</StateNumber>
+      <StateNumber>945</StateNumber>
+      <SequenceId>24736</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="378" parent="277" name="nome">
+    <column id="376" parent="281" name="nome">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>747</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="379" parent="277" name="contacto">
+    <column id="377" parent="281" name="contacto">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>747</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="380" parent="277" name="morada">
+    <column id="378" parent="281" name="morada">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>795</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="381" parent="277" name="email">
+    <column id="379" parent="281" name="email">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>795</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="382" parent="277" name="website">
+    <column id="380" parent="281" name="website">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>796</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="383" parent="277" name="Transportadora_pkey">
+    <index id="381" parent="281" name="Transportadora_pkey">
       <ColNames>id_transportadora</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16483</ObjectId>
@@ -6770,8 +6763,7 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="384" parent="277" name="Transportadora_pkey">
-      <NameSurrogate>1</NameSurrogate>
+    <key id="382" parent="281" name="Transportadora_pkey">
       <ObjectId>16484</ObjectId>
       <Primary>1</Primary>
       <StateNumber>747</StateNumber>

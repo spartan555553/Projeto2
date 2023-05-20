@@ -10,13 +10,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class StockMatériasPrimas {
+public class FiltrosMateriasPrimas {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    //Go Back Button
+    //Go back Button
     @FXML
     public void handleBackButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml"));

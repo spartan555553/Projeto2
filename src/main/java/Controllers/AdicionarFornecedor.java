@@ -55,7 +55,7 @@ public class AdicionarFornecedor {
     // Insert the new Fornecedor object into the database
     private boolean insertFornecedor(Fornecedor fornecedor) {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "INSERT INTO \"Fornecedor\" (nome, contacto, morada, email, website) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO \"fornecedor\" (nome, contacto, morada, email, website) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -80,8 +80,6 @@ public class AdicionarFornecedor {
         root = FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml"));
         switchScene(event);
     }
-
-
 
     //Method to switch scenes
     private void switchScene(ActionEvent event) {

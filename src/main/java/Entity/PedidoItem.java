@@ -59,6 +59,10 @@ public class PedidoItem {
         return idLote;
     }
 
+    public void setIdLote(Integer idLote) {
+        this.idLote = idLote;
+    }
+
     public void setIdLote(int idLote) { this.idLote = idLote;
     }
 

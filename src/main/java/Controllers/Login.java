@@ -1,7 +1,7 @@
 package Controllers;
 
-import Entity.Funcionário;
-import Entity.FuncionárioNotFoundException;
+import Entity.Funcionario;
+import Entity.FuncionarioNotFoundException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +21,7 @@ import java.sql.SQLException;
 
 public class Login {
 
-    private static Funcionário loggedInFuncionário;
+    private static Funcionario loggedInFuncionario;
 
     @FXML
     private TextField UsernameField;
@@ -34,14 +34,14 @@ public class Login {
 
     //Login Method
     @FXML
-    public void handleLogin(ActionEvent event) throws IOException, FuncionárioNotFoundException {
+    public void handleLogin(ActionEvent event) throws IOException, FuncionarioNotFoundException {
         String username = UsernameField.getText();
         String password = PasswordField.getText();
 
         if (authenticate(username, password)) {
             // Successful login
-            // Set the logged-in Funcionário
-            loggedInFuncionário = getFuncionárioByUsername(username);
+            // Set the logged-in Funcionario
+            loggedInFuncionario = getFuncionarioByUsername(username);
 
             // Navigate to the main menu or another screen
             root = FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml"));
@@ -52,10 +52,10 @@ public class Login {
         }
     }
 
-    //Database Funcionário Authentication
+    //Database Funcionario Authentication
     private boolean authenticate(String username, String password) {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "SELECT * FROM \"Funcionário\" WHERE username = ? AND password = ?";
+        String sql = "SELECT * FROM funcionario WHERE username = ? AND password = ?";
 
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -72,9 +72,9 @@ public class Login {
     }
 
     // Retrieve Funcionário by username from the database
-    private Funcionário getFuncionárioByUsername(String username) throws FuncionárioNotFoundException {
+    private Funcionario getFuncionarioByUsername(String username) throws FuncionarioNotFoundException {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "SELECT * FROM \"Funcionário\" WHERE username = ?";
+        String sql = "SELECT * FROM \"funcionario\" WHERE username = ?";
 
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -82,9 +82,9 @@ public class Login {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 // Create a new Funcionário object and populate its properties from the ResultSet
-                Funcionário funcionário = new Funcionário();
-                funcionário.setIdFuncionário(rs.getInt("id_funcionário"));
-                return funcionário;
+                Funcionario funcionario = new Funcionario();
+                funcionario.setIdFuncionario(rs.getInt("id_funcionario"));
+                return funcionario;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -92,11 +92,11 @@ public class Login {
             connection.closeConnection();
         }
 
-        throw new FuncionárioNotFoundException("Error occurred while retrieving Funcionário for username: " + username);
+        throw new FuncionarioNotFoundException("Error occurred while retrieving Funcionario for username: " + username);
     }
 
-    public static Funcionário getLoggedInFuncionário() {
-        return loggedInFuncionário;
+    public static Funcionario getLoggedInFuncionario() {
+        return loggedInFuncionario;
     }
 
     //Quit Button

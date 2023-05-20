@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Funcionário {
+public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id_funcionário")
-    private int idFuncionário;
+    @Column(name = "id_funcionario")
+    private int idFuncionario;
     @Basic
     @Column(name = "nome")
     private String nome;
@@ -34,12 +34,12 @@ public class Funcionário {
     @Column(name = "estado_conta")
     private String estadoConta;
 
-    public int getIdFuncionário() {
-        return idFuncionário;
+    public int getIdFuncionario() {
+        return idFuncionario;
     }
 
-    public void setIdFuncionário(int idFuncionário) {
-        this.idFuncionário = idFuncionário;
+    public void setIdFuncionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
     public String getNome() {
@@ -110,12 +110,12 @@ public class Funcionário {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Funcionário that = (Funcionário) o;
-        return idFuncionário == that.idFuncionário && Objects.equals(nome, that.nome) && Objects.equals(contacto, that.contacto) && Objects.equals(morada, that.morada) && Objects.equals(email, that.email) && Objects.equals(nif, that.nif) && Objects.equals(username, that.username) && Objects.equals(password, that.password) && Objects.equals(estadoConta, that.estadoConta);
+        Funcionario that = (Funcionario) o;
+        return idFuncionario == that.idFuncionario && Objects.equals(nome, that.nome) && Objects.equals(contacto, that.contacto) && Objects.equals(morada, that.morada) && Objects.equals(email, that.email) && Objects.equals(nif, that.nif) && Objects.equals(username, that.username) && Objects.equals(password, that.password) && Objects.equals(estadoConta, that.estadoConta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idFuncionário, nome, contacto, morada, email, nif, username, password, estadoConta);
+        return Objects.hash(idFuncionario, nome, contacto, morada, email, nif, username, password, estadoConta);
     }
 }

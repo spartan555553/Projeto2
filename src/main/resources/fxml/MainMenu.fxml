@@ -19,11 +19,11 @@
             <Font name="Georgia" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="229.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleAdicionarEnchido" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Adicionar lote de enchido ao sistema" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="229.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleListarEnchidos" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Listar o stock de enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="64.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleAdicionarMatériaPrima" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Adicionar lote de matéria-prima ao sistema" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="64.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleListarMatériasPrimas" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Listar o stock de matérias-primas" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="391.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleFaseProdução" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Mudar a fase de produção de um lote de enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="391.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleAdicionarFornecedor" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Adicionar fornecedor" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="229.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleEnchidosButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="229.0" layoutY="231.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Listar o stock de enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="64.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleMateriasPrimasButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Matérias Primas" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="64.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleFornecedoresButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Fornecedores" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="391.0" layoutY="78.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Mudar a fase de produção de um lote de enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="391.0" layoutY="231.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Adicionar fornecedor" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
    </children>
 </AnchorPane>

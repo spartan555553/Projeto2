@@ -16,23 +16,41 @@ public class Enchido {
     @Column(name = "tipo_enchido")
     private String tipoEnchido;
     @Basic
-    @Column(name = "custo_unitário")
-    private double custoUnitário;
+    @Column(name = "custo_unitario")
+    private double custoUnitario;
     @Basic
-    @Column(name = "fase_produção")
-    private String faseProdução;
+    @Column(name = "fase_producao")
+    private String faseProducao;
     @Basic
-    @Column(name = "descrição")
-    private String descrição;
+    @Column(name = "descricao")
+    private String descricao;
+    @Basic
+    @Column(name = "quantidade")
+    private Integer quantidade;
 
     public Enchido() {
         // Empty constructor required by JPA
     }
 
-    public Enchido(String tipoEnchido, Double custoUnitário, String descrição) {
+    public Enchido(String tipoEnchido, Double custoUnitario, String faseProducao, String descricao, Integer quantidade) {
         this.tipoEnchido = tipoEnchido;
-        this.custoUnitário = custoUnitário;
-        this.descrição = descrição;
+        this.custoUnitario = custoUnitario;
+        this.faseProducao = faseProducao;
+        this.descricao = descricao;
+        this.quantidade = quantidade;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Enchido enchido = (Enchido) o;
+        return idEnchido == enchido.idEnchido && idLote == enchido.idLote && Double.compare(enchido.custoUnitario, custoUnitario) == 0 && Objects.equals(tipoEnchido, enchido.tipoEnchido) && Objects.equals(faseProducao, enchido.faseProducao) && Objects.equals(descricao, enchido.descricao) && Objects.equals(quantidade, enchido.quantidade);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idEnchido, idLote, tipoEnchido, custoUnitario, faseProducao, descricao, quantidade);
     }
 
     public int getIdEnchido() {
@@ -59,40 +77,35 @@ public class Enchido {
         this.tipoEnchido = tipoEnchido;
     }
 
-    public double getCustoUnitário() {
-        return custoUnitário;
+    public double getCustoUnitario() {
+        return custoUnitario;
     }
 
-    public void setCustoUnitário(double custoUnitário) {
-        this.custoUnitário = custoUnitário;
+    public void setCustoUnitario(double custoUnitario) {
+        this.custoUnitario = custoUnitario;
     }
 
-    public String getFaseProdução() {
-        return faseProdução;
+    public String getFaseProducao() {
+        return faseProducao;
     }
 
-    public void setFaseProdução(String faseProdução) {
-        this.faseProdução = faseProdução;
+    public void setFaseProducao(String faseProducao) {
+        this.faseProducao = faseProducao;
     }
 
-    public String getDescrição() {
-        return descrição;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Enchido enchido = (Enchido) o;
-        return idEnchido == enchido.idEnchido && idLote == enchido.idLote && Double.compare(enchido.custoUnitário, custoUnitário) == 0 && Objects.equals(tipoEnchido, enchido.tipoEnchido) && Objects.equals(faseProdução, enchido.faseProdução) && Objects.equals(descrição, enchido.descrição);
+    public Integer getQuantidade() {
+        return quantidade;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(idEnchido, idLote, tipoEnchido, custoUnitário, faseProdução, descrição);
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
     }
 }

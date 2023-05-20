@@ -6,5 +6,6 @@ module com.example.proj2 {
 
 
     opens Controllers to javafx.fxml;
+    opens Entity to javafx.base;
     exports Controllers;
 }

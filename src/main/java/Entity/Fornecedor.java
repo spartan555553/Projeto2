@@ -25,7 +25,20 @@ public class Fornecedor {
     @Column(name = "website")
     private String website;
 
+    public Fornecedor() {
+        // Empty constructor required by JPA
+    }
+
     public Fornecedor(String nome, String contacto, String morada, String email, String website) {
+        this.nome = nome;
+        this.contacto = contacto;
+        this.morada = morada;
+        this.email = email;
+        this.website = website;
+    }
+
+    public Fornecedor(Integer idFornecedor, String nome, String contacto, String morada, String email, String website) {
+        this.idFornecedor = idFornecedor;
         this.nome = nome;
         this.contacto = contacto;
         this.morada = morada;

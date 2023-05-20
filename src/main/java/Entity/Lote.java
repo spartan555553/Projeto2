@@ -11,20 +11,32 @@ public class Lote {
     @Column(name = "id_lote")
     private int idLote;
     @Basic
-    @Column(name = "id_funcionário")
-    private int idFuncionário;
+    @Column(name = "id_funcionario")
+    private int idFuncionario;
     @Basic
     @Column(name = "custo")
     private double custo;
     @Basic
-    @Column(name = "data_criação")
-    private Date dataCriação;
+    @Column(name = "data_criacao")
+    private Date dataCriacao;
     @Basic
     @Column(name = "data_validade")
     private Date dataValidade;
     @Basic
     @Column(name = "estado_lote")
     private String estadoLote;
+
+    public Lote() {
+        // Empty constructor required by JPA
+    }
+
+    public Lote(int idFuncionario, double custo, Date dataCriacao, Date dataValidade, String estadoLote) {
+        this.idFuncionario = idFuncionario;
+        this.custo = custo;
+        this.dataCriacao = dataCriacao;
+        this.dataValidade = dataValidade;
+        this.estadoLote = estadoLote;
+    }
 
     public int getIdLote() {
         return idLote;
@@ -34,12 +46,12 @@ public class Lote {
         this.idLote = idLote;
     }
 
-    public int getIdFuncionário() {
-        return idFuncionário;
+    public int getIdFuncionario() {
+        return idFuncionario;
     }
 
-    public void setIdFuncionário(int idFuncionário) {
-        this.idFuncionário = idFuncionário;
+    public void setIdFuncionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
     public double getCusto() {
@@ -50,12 +62,12 @@ public class Lote {
         this.custo = custo;
     }
 
-    public Date getDataCriação() {
-        return dataCriação;
+    public Date getDataCriacao() {
+        return dataCriacao;
     }
 
-    public void setDataCriação(Date dataCriação) {
-        this.dataCriação = dataCriação;
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 
     public Date getDataValidade() {
@@ -74,24 +86,18 @@ public class Lote {
         this.estadoLote = estadoLote;
     }
 
-    public Lote(int idFuncionário, double custo, Date dataCriação, Date dataValidade, String estadoLote) {
-        this.idFuncionário = idFuncionário;
-        this.custo = custo;
-        this.dataCriação = dataCriação;
-        this.dataValidade = dataValidade;
-        this.estadoLote = estadoLote;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Lote lote = (Lote) o;
-        return idLote == lote.idLote && idFuncionário == lote.idFuncionário && Double.compare(lote.custo, custo) == 0 && Objects.equals(dataCriação, lote.dataCriação) && Objects.equals(dataValidade, lote.dataValidade) && Objects.equals(estadoLote, lote.estadoLote);
+        return idLote == lote.idLote && idFuncionario == lote.idFuncionario && Double.compare(lote.custo, custo) == 0 && Objects.equals(dataCriacao, lote.dataCriacao) && Objects.equals(dataValidade, lote.dataValidade) && Objects.equals(estadoLote, lote.estadoLote);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idLote, idFuncionário, custo, dataCriação, dataValidade, estadoLote);
+        return Objects.hash(idLote, idFuncionario, custo, dataCriacao, dataValidade, estadoLote);
     }
+
+
 }
