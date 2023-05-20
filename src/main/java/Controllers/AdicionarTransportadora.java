@@ -1,6 +1,6 @@
 package Controllers;
 
-import Entity.Fornecedor;
+import Entity.Transportadora;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AdicionarFornecedor {
+public class AdicionarTransportadora {
 
     private Stage stage;
     private Scene scene;
@@ -32,8 +32,8 @@ public class AdicionarFornecedor {
     @FXML
     private TextField websiteField;
 
-    // Method to create a new Fornecedor
-    public void handleAdicionarFornecedor(ActionEvent event) throws IOException {
+    // Method to create a new Transportadora
+    public void handleAdicionarTransportadora(ActionEvent event) throws IOException {
         String nome = nameField.getText();
         String contacto = phoneField.getText();
         String morada = addressField.getText();
@@ -41,30 +41,30 @@ public class AdicionarFornecedor {
         String website = websiteField.getText();
 
 
-        // Create a new Fornecedor object
-        Fornecedor fornecedor = new Fornecedor(nome, contacto, morada, email, website);
+        // Create a new Transportadora object
+        Transportadora transportadora = new Transportadora(nome, contacto, morada, email, website);
 
-        // Insert the Fornecedor into the database
-        if (insertFornecedor(fornecedor)) {
-            System.out.println("Fornecedor inserted successfully!");
+        // Insert the Transportadora into the database
+        if (insertTransportadora(transportadora)) {
+            System.out.println("Transportadora inserted successfully!");
             switchToPreviousScreen(event);
         } else {
-            System.out.println("Failed to insert Fornecedor.");
+            System.out.println("Failed to insert Transportadora.");
         }
     }
 
-    // Insert the new Fornecedor object into the database
-    private boolean insertFornecedor(Fornecedor fornecedor) {
+    // Insert the new Transportadora object into the database
+    private boolean insertTransportadora(Transportadora transportadora) {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "INSERT INTO \"fornecedor\" (nome, contacto, morada, email, website) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO \"transportadora\" (nome, contacto, morada, email, website) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, fornecedor.getNome());
-            stmt.setString(2, fornecedor.getContacto());
-            stmt.setString(3, fornecedor.getMorada());
-            stmt.setString(4, fornecedor.getEmail());
-            stmt.setString(5, fornecedor.getWebsite());
+            stmt.setString(1, transportadora.getNome());
+            stmt.setString(2, transportadora.getContacto());
+            stmt.setString(3, transportadora.getMorada());
+            stmt.setString(4, transportadora.getEmail());
+            stmt.setString(5, transportadora.getWebsite());
             int rowsAffected = stmt.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
@@ -77,7 +77,7 @@ public class AdicionarFornecedor {
 
     //Switch to Previous Screen
     private void switchToPreviousScreen(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/ListarFornecedores.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/fxml/ListarTransportadoras.fxml"));
         switchScene(event);
     }
 

@@ -20,10 +20,10 @@
          </font>
       </Button>
       <Button layoutX="229.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleEnchidosButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="229.0" layoutY="231.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Listar o stock de enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="229.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleTransportadorasButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Transportadoras" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
       <Button layoutX="64.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleMateriasPrimasButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Matérias Primas" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
       <Button layoutX="64.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleFornecedoresButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Fornecedores" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="391.0" layoutY="78.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Mudar a fase de produção de um lote de enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="391.0" layoutY="231.0" mnemonicParsing="false" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Adicionar fornecedor" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="391.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleMudarFaseProducaoButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Mudar a fase de produção de um lote de enchidos" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button layoutX="391.0" layoutY="231.0" mnemonicParsing="false" onAction="#handlePedidosClienteButton" prefHeight="142.0" prefWidth="142.0" style="-fx-border-color: #000000;" text="Pedidos de Entrega" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
    </children>
 </AnchorPane>

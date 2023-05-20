@@ -23,24 +23,46 @@ public class MainMenu {
         switchScene(event);
     }
 
-    //Adicionar Matéria Prima Button
+    //Matérias Primas Button
     @FXML
     public void handleMateriasPrimasButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/fxml/StockMateriasPrimas.fxml"));
         switchScene(event);
     }
 
-    //Adicionar Enchidos Button
+    //Enchidos Button
     @FXML
     public void handleEnchidosButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/fxml/StockEnchidos.fxml"));
         switchScene(event);
     }
 
-    //Adicionar Fornecedor Button
+
+    //Mudar fase de Producao Button
+    @FXML
+    public void handleMudarFaseProducaoButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/FaseProducao.fxml"));
+        switchScene(event);
+    }
+
+    //Fornecedores Button
     @FXML
     public void handleFornecedoresButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/fxml/ListarFornecedores.fxml"));
+        switchScene(event);
+    }
+
+    //Transportadoras Button
+    @FXML
+    public void handleTransportadorasButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/ListarTransportadoras.fxml"));
+        switchScene(event);
+    }
+
+    //Pedidos de Cliente Button
+    @FXML
+    public void handlePedidosClienteButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/ListarPedidosCliente.fxml"));
         switchScene(event);
     }
 

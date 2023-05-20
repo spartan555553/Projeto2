@@ -25,6 +25,27 @@ public class Transportadora {
     @Column(name = "website")
     private String website;
 
+    public Transportadora() {
+        // Empty constructor required by JPA
+    }
+
+    public Transportadora(String nome, String contacto, String morada, String email, String website) {
+        this.nome = nome;
+        this.contacto = contacto;
+        this.morada = morada;
+        this.email = email;
+        this.website = website;
+    }
+
+    public Transportadora(Integer idTransportadora, String nome, String contacto, String morada, String email, String website) {
+        this.idTransportadora = idTransportadora;
+        this.nome = nome;
+        this.contacto = contacto;
+        this.morada = morada;
+        this.email = email;
+        this.website = website;
+    }
+
     public int getIdTransportadora() {
         return idTransportadora;
     }

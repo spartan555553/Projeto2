@@ -1,6 +1,6 @@
 package Controllers;
 
-import Entity.Fornecedor;
+import Entity.Transportadora;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,31 +23,31 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ListarFornecedores implements Initializable {
+public class ListarTransportadoras implements Initializable {
 
     @FXML
-    private TableView<Fornecedor> FornecedorView;
+    private TableView<Transportadora> TransportadoraView;
 
     @FXML
-    private TableColumn<Fornecedor, Integer> idFornecedorColumn;
+    private TableColumn<Transportadora, Integer> idTransportadoraColumn;
 
     @FXML
-    private TableColumn<Fornecedor, String> nomeColumn;
+    private TableColumn<Transportadora, String> nomeColumn;
 
     @FXML
-    private TableColumn<Fornecedor, String> contactoColumn;
+    private TableColumn<Transportadora, String> contactoColumn;
 
     @FXML
-    private TableColumn<Fornecedor, String> moradaColumn;
+    private TableColumn<Transportadora, String> moradaColumn;
 
     @FXML
-    private TableColumn<Fornecedor, String> emailColumn;
+    private TableColumn<Transportadora, String> emailColumn;
 
     @FXML
-    private TableColumn<Fornecedor, String> websiteColumn;
+    private TableColumn<Transportadora, String> websiteColumn;
 
 
-    ObservableList<Fornecedor>  fornecedorList = FXCollections.observableArrayList();
+    ObservableList<Transportadora>  transportadoraList = FXCollections.observableArrayList();
 
 
     @Override
@@ -57,13 +57,13 @@ public class ListarFornecedores implements Initializable {
 
     private void loadData() {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "SELECT * FROM fornecedor";
+        String sql = "SELECT * FROM transportadora";
 
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
 
-            idFornecedorColumn.setCellValueFactory(new PropertyValueFactory<>("idFornecedor"));
+            idTransportadoraColumn.setCellValueFactory(new PropertyValueFactory<>("idTransportadora"));
             nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
             contactoColumn.setCellValueFactory(new PropertyValueFactory<>("contacto"));
             moradaColumn.setCellValueFactory(new PropertyValueFactory<>("morada"));
@@ -72,8 +72,8 @@ public class ListarFornecedores implements Initializable {
 
 
             while (rs.next()) {
-                Fornecedor fornecedorInfo = new Fornecedor(
-                        rs.getInt("id_fornecedor"),
+                Transportadora transportadoraInfo = new Transportadora(
+                        rs.getInt("id_transportadora"),
                         rs.getString("nome"),
                         rs.getString("contacto"),
                         rs.getString("morada"),
@@ -81,10 +81,10 @@ public class ListarFornecedores implements Initializable {
                         rs.getString("website")
                 );
 
-                fornecedorList.add(fornecedorInfo);
+                transportadoraList.add(transportadoraInfo);
             }
 
-            FornecedorView.setItems(fornecedorList);
+            TransportadoraView.setItems(transportadoraList);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -95,14 +95,14 @@ public class ListarFornecedores implements Initializable {
 
     private void refreshData() {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "SELECT * FROM fornecedor";
+        String sql = "SELECT * FROM transportadora";
 
-        fornecedorList.clear();
+        transportadoraList.clear();
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
 
-            idFornecedorColumn.setCellValueFactory(new PropertyValueFactory<>("idFornecedor"));
+            idTransportadoraColumn.setCellValueFactory(new PropertyValueFactory<>("idTransportadora"));
             nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
             contactoColumn.setCellValueFactory(new PropertyValueFactory<>("contacto"));
             moradaColumn.setCellValueFactory(new PropertyValueFactory<>("morada"));
@@ -110,8 +110,8 @@ public class ListarFornecedores implements Initializable {
             websiteColumn.setCellValueFactory(new PropertyValueFactory<>("website"));
 
             while (rs.next()) {
-                Fornecedor fornecedorInfo = new Fornecedor(
-                        rs.getInt("id_fornecedor"),
+                Transportadora transportadoraInfo = new Transportadora(
+                        rs.getInt("id_transportadora"),
                         rs.getString("nome"),
                         rs.getString("contacto"),
                         rs.getString("morada"),
@@ -119,10 +119,10 @@ public class ListarFornecedores implements Initializable {
                         rs.getString("website")
                 );
 
-                fornecedorList.add(fornecedorInfo);
+                transportadoraList.add(transportadoraInfo);
             }
 
-            FornecedorView.setItems(fornecedorList);
+            TransportadoraView.setItems(transportadoraList);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -132,26 +132,26 @@ public class ListarFornecedores implements Initializable {
     }
 
     @FXML
-    public void handleAdicionarFornecedorButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/AdicionarFornecedor.fxml"));
+    public void handleAdicionarTransportadoraButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/AdicionarTransportadora.fxml"));
         switchScene(event, root);
     }
 
     @FXML
     public void handleDeleteButton(ActionEvent event) {
-        Fornecedor selectedFornecedor = FornecedorView.getSelectionModel().getSelectedItem();
+        Transportadora selectedTransportadora = TransportadoraView.getSelectionModel().getSelectedItem();
 
-        if (selectedFornecedor != null) {
+        if (selectedTransportadora != null) {
             DatabaseConnection connection = new DatabaseConnection();
-            String deleteSql = "DELETE FROM fornecedor WHERE id_fornecedor = ?;";
+            String deleteSql = "DELETE FROM transportadora WHERE id_transportadora = ?;";
 
             try (Connection conn = connection.getConnection();
                  PreparedStatement stmt = conn.prepareStatement(deleteSql)) {
 
-                stmt.setInt(1, selectedFornecedor.getIdFornecedor());
+                stmt.setInt(1, selectedTransportadora.getIdTransportadora());
                 stmt.executeUpdate();
 
-                fornecedorList.remove(selectedFornecedor);
+                transportadoraList.remove(selectedTransportadora);
 
             } catch (SQLException e) {
                 e.printStackTrace();
