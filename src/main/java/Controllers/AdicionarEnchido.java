@@ -53,7 +53,16 @@ public class AdicionarEnchido implements Initializable {
         populateFaseProducaoDropdown();
     }
 
-    // Method to create a new MatériaPrima
+    private void populateFaseProducaoDropdown() {
+        ObservableList<String> faseProducaoOptions = FXCollections.observableArrayList(
+                "Option 1",
+                "Option 2",
+                "Option 3"
+        );
+        faseProducaoDropdown.setItems(faseProducaoOptions);
+    }
+
+    // Method to create a new Enchido
     public void handleAdicionarEnchido(ActionEvent event) {
         // Create a new instance of DatabaseConnection
         DatabaseConnection connection = new DatabaseConnection();
@@ -101,35 +110,39 @@ public class AdicionarEnchido implements Initializable {
         // Create a new Lote object
         Lote lote = new Lote(idFuncionario, custo, dataCriacao, dataValidade, estado_lote);
 
-        // Save the Lote object to the database
-        if (insertLote(lote)) {
-            System.out.println("Lote inserted successfully!");
+        try {
+            // Save the Lote object to the database
+            if (insertLote(lote)) {
+                System.out.println("Lote inserted successfully!");
 
-            // Get the generated idLote from the database
-            int idLote = connection.getGeneratedId("\"Lote_id_lote_seq\"");
-            System.out.println(idLote);
+                // Get the generated idLote from the database
+                int idLote = connection.getGeneratedId("\"Lote_id_lote_seq\"");
 
-            // Create a new Enchido object
-            Enchido enchido = new Enchido(tipoEnchido, custoUnitario, faseProducao, descricao, quantidade);
+                // Create a new Enchido object
+                Enchido enchido = new Enchido(tipoEnchido, custoUnitario, faseProducao, descricao, quantidade, idLote);
 
-            // Save the Enchido object to the database
-            if (insertEnchido(enchido)) {
-                System.out.println("Enchido inserted successfully!");
+                // Save the Enchido object to the database
+                if (insertEnchido(enchido)) {
+                    System.out.println("Enchido inserted successfully!");
+                    // Go back to the previous screen
+                    switchToPreviousScreen(event);
+                } else {
+                    System.out.println("Failed to insert Enchido.");
+                }
             } else {
-                System.out.println("Failed to insert Enchido.");
+                System.out.println("Failed to insert Lote.");
             }
-        } else {
-            System.out.println("Failed to insert Lote.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            connection.closeConnection();
         }
-
-        // Close the database connection
-        connection.closeConnection();
     }
 
     // Insert the new Enchido object into the database
     private boolean insertEnchido(Enchido enchido) {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "INSERT INTO enchido (tipoEnchido, custoUnitario, faseProducao, descricao, quantidade) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO enchido (tipo_enchido, custo_unitario, fase_producao, descricao, quantidade, id_lote) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -138,6 +151,7 @@ public class AdicionarEnchido implements Initializable {
             stmt.setString(3, enchido.getFaseProducao());
             stmt.setString(4, enchido.getDescricao());
             stmt.setInt(5, enchido.getQuantidade());
+            stmt.setInt(6, enchido.getIdLote());
             int rowsAffected = stmt.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
@@ -151,7 +165,7 @@ public class AdicionarEnchido implements Initializable {
     // Insert the new Lote object into the database
     private boolean insertLote(Lote lote) {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "INSERT INTO lote (id_funcionário, custo, data_criação, data_validade, estado_lote) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO lote (id_funcionario, custo, data_criacao, data_validade, estado_lote) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -170,15 +184,10 @@ public class AdicionarEnchido implements Initializable {
         }
     }
 
-    // Method to populate the faseProducaoDropdown ChoiceBox
-    private void populateFaseProducaoDropdown() {
-        ObservableList<String> options = FXCollections.observableArrayList(
-                "1",
-                "2",
-                "3"
-        );
 
-        faseProducaoDropdown.setItems(options);
+    private void switchToPreviousScreen(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/StockEnchidos.fxml"));
+        switchScene(event);
     }
 
     //Go Back Button

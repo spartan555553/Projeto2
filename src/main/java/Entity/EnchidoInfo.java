@@ -13,8 +13,8 @@ public class EnchidoInfo {
     private Date dataValidade;
     private String estadoLote;
 
-    public EnchidoInfo(int idEnchido, int idLote, String tipoEnchido,
-                            int quantidade, double custo,String faseProducao, Date dataCriacao, Date dataValidade, String estadoLote) {
+    public EnchidoInfo(int idEnchido, int idLote, String tipoEnchido, int quantidade, double custo,String faseProducao,
+                       Date dataCriacao, Date dataValidade, String estadoLote) {
         this.idEnchido = idEnchido;
         this.idLote = idLote;
         this.tipoEnchido = tipoEnchido;

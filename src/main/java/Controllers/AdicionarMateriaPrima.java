@@ -111,7 +111,7 @@ public class AdicionarMateriaPrima implements Initializable {
             if (insertLote(lote)) {
                 System.out.println("Lote inserted successfully!");
 
-                // Get the generated idMatériaPrima from the database
+                // Get the generated idLote from the database
                 int idLote = connection.getGeneratedId("\"Lote_id_lote_seq\"");
 
                 // Create a new Materia Prima object
@@ -130,9 +130,7 @@ public class AdicionarMateriaPrima implements Initializable {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle the IOException here or propagate it further if needed
         } finally {
-            // Close the database connection
             connection.closeConnection();
         }
     }

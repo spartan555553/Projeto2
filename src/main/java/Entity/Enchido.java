@@ -32,12 +32,13 @@ public class Enchido {
         // Empty constructor required by JPA
     }
 
-    public Enchido(String tipoEnchido, Double custoUnitario, String faseProducao, String descricao, Integer quantidade) {
+    public Enchido(String tipoEnchido, Double custoUnitario, String faseProducao, String descricao, Integer quantidade, Integer idLote) {
         this.tipoEnchido = tipoEnchido;
         this.custoUnitario = custoUnitario;
         this.faseProducao = faseProducao;
         this.descricao = descricao;
         this.quantidade = quantidade;
+        this.idLote = idLote;
     }
 
     @Override

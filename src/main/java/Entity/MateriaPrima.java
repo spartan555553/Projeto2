@@ -41,17 +41,6 @@ public class MateriaPrima {
         this.idLote = idLote;
     }
 
-    public MateriaPrima(int idMateriaPrima, int idLote, int idFornecedor, String tipoMateriaPrima, int quantidade, double custoUnitario, String descricao) {
-        this.idMateriaPrima = idMateriaPrima;
-        this.idLote = idLote;
-        this.idFornecedor = idFornecedor;
-        this.tipoMateriaPrima = tipoMateriaPrima;
-        this.quantidade = quantidade;
-        this.custoUnitario = custoUnitario;
-        this.descricao = descricao;
-    }
-
-
     public int getIdMateriaPrima() {
         return idMateriaPrima;
     }

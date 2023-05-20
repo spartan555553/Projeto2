@@ -37,14 +37,14 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="300.0" layoutY="106.0" prefHeight="27.0" prefWidth="125.0" style="-fx-border-color: #000000;" />
+      <TextField fx:id="quantidadeField" layoutX="300.0" layoutY="106.0" prefHeight="27.0" prefWidth="125.0" style="-fx-border-color: #000000;" />
       <Label layoutX="41.0" layoutY="158.0" text="Fase de Produção">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="42.0" layoutY="198.0" prefHeight="27.0" prefWidth="234.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 10;" />
-      <DatePicker layoutX="318.0" layoutY="198.0" prefHeight="27.0" prefWidth="188.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
+      <ChoiceBox fx:id="faseProducaoDropdown" layoutX="42.0" layoutY="198.0" prefHeight="27.0" prefWidth="234.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 10;" />
+      <DatePicker fx:id="dataValidadePicker" layoutX="318.0" layoutY="198.0" prefHeight="27.0" prefWidth="188.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
       <Label layoutX="318.0" layoutY="161.0" text="Data de validade">
          <font>
             <Font size="24.0" />
@@ -56,12 +56,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="444.0" layoutY="107.0" prefHeight="27.0" prefWidth="147.0" style="-fx-border-color: #000000;" />
+      <TextField fx:id="custoUnitarioField" layoutX="444.0" layoutY="107.0" prefHeight="27.0" prefWidth="147.0" style="-fx-border-color: #000000;" />
       <Label layoutX="54.0" layoutY="234.0" text="Descrição">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="51.0" layoutY="269.0" prefHeight="74.0" prefWidth="518.0" style="-fx-border-color: #000000;" />
+      <TextField fx:id="descriptionField" layoutX="51.0" layoutY="269.0" prefHeight="74.0" prefWidth="518.0" style="-fx-border-color: #000000;" />
    </children>
 </AnchorPane>

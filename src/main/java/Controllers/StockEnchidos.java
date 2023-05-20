@@ -53,6 +53,7 @@ public class StockEnchidos implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         loadData();
     }
 
@@ -71,16 +72,16 @@ public class StockEnchidos implements Initializable {
             tipoEnchidoColumn.setCellValueFactory(new PropertyValueFactory<>("tipoEnchido"));
             quantidadeColumn.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
             custoColumn.setCellValueFactory(new PropertyValueFactory<>("custo"));
-            faseProducaoColumn.setCellValueFactory(new PropertyValueFactory<>("fase_producao"));
-            dataCriacaoColumn.setCellValueFactory(new PropertyValueFactory<>("data_criacao"));
-            dataValidadeColumn.setCellValueFactory(new PropertyValueFactory<>("data_validade"));
-            estadoLoteColumn.setCellValueFactory(new PropertyValueFactory<>("estado_lote"));
+            faseProducaoColumn.setCellValueFactory(new PropertyValueFactory<>("faseProducao"));
+            dataCriacaoColumn.setCellValueFactory(new PropertyValueFactory<>("dataCriacao"));
+            dataValidadeColumn.setCellValueFactory(new PropertyValueFactory<>("dataValidade"));
+            estadoLoteColumn.setCellValueFactory(new PropertyValueFactory<>("estadoLote"));
 
             while (rs.next()) {
                 EnchidoInfo enchidoInfo = new EnchidoInfo(
                         rs.getInt("id_enchido"),
                         rs.getInt("id_lote"),
-                        rs.getString("tipo_materia_prima"),
+                        rs.getString("tipo_enchido"),
                         rs.getInt("quantidade"),
                         rs.getDouble("custo"),
                         rs.getString("fase_producao"),
@@ -88,6 +89,8 @@ public class StockEnchidos implements Initializable {
                         rs.getDate("data_validade"),
                         rs.getString("estado_lote")
                 );
+
+                enchidoList.add(enchidoInfo);
             }
 
             EnchidoView.setItems(enchidoList);
@@ -115,16 +118,16 @@ public class StockEnchidos implements Initializable {
             tipoEnchidoColumn.setCellValueFactory(new PropertyValueFactory<>("tipoEnchido"));
             quantidadeColumn.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
             custoColumn.setCellValueFactory(new PropertyValueFactory<>("custo"));
-            faseProducaoColumn.setCellValueFactory(new PropertyValueFactory<>("fase_producao"));
-            dataCriacaoColumn.setCellValueFactory(new PropertyValueFactory<>("data_criacao"));
-            dataValidadeColumn.setCellValueFactory(new PropertyValueFactory<>("data_validade"));
-            estadoLoteColumn.setCellValueFactory(new PropertyValueFactory<>("estado_lote"));
+            faseProducaoColumn.setCellValueFactory(new PropertyValueFactory<>("faseProducao"));
+            dataCriacaoColumn.setCellValueFactory(new PropertyValueFactory<>("dataCriacao"));
+            dataValidadeColumn.setCellValueFactory(new PropertyValueFactory<>("dataValidade"));
+            estadoLoteColumn.setCellValueFactory(new PropertyValueFactory<>("estadoLote"));
 
             while (rs.next()) {
                 EnchidoInfo enchidoInfo = new EnchidoInfo(
                         rs.getInt("id_enchido"),
                         rs.getInt("id_lote"),
-                        rs.getString("tipo_materia_prima"),
+                        rs.getString("tipo_enchido"),
                         rs.getInt("quantidade"),
                         rs.getDouble("custo"),
                         rs.getString("fase_producao"),
