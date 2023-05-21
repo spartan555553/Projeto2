@@ -34,6 +34,32 @@ public class Funcionario {
     @Column(name = "estado_conta")
     private String estadoConta;
 
+    public Funcionario() {
+        // Empty constructor required by JPA
+    }
+
+    public Funcionario(Integer idFuncionario, String nome, String contacto, String morada, String email, String nif, String username, String estadoConta) {
+        this.idFuncionario = idFuncionario;
+        this.nome = nome;
+        this.contacto = contacto;
+        this.morada = morada;
+        this.email = email;
+        this.nif = nif;
+        this.username = username;
+        this.estadoConta = estadoConta;
+    }
+
+    public Funcionario(String nome, String contacto, String morada, String email, String nif, String username,String password, String estadoConta) {
+        this.nome = nome;
+        this.contacto = contacto;
+        this.morada = morada;
+        this.email = email;
+        this.nif = nif;
+        this.username = username;
+        this.password = password;
+        this.estadoConta = estadoConta;
+    }
+
     public int getIdFuncionario() {
         return idFuncionario;
     }

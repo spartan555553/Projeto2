@@ -52,10 +52,10 @@ public class Login {
         }
     }
 
-    //Database Funcionario Authentication
+    // Database Funcionario Authentication
     private boolean authenticate(String username, String password) {
         DatabaseConnection connection = new DatabaseConnection();
-        String sql = "SELECT * FROM funcionario WHERE username = ? AND password = ?";
+        String sql = "SELECT * FROM funcionario WHERE username = ? AND password = ? AND estado_conta = 'Ativo'";
 
         try (Connection conn = connection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -71,7 +71,7 @@ public class Login {
         }
     }
 
-    // Retrieve Funcionário by username from the database
+    // Retrieve Funcionario by username from the database
     private Funcionario getFuncionarioByUsername(String username) throws FuncionarioNotFoundException {
         DatabaseConnection connection = new DatabaseConnection();
         String sql = "SELECT * FROM \"funcionario\" WHERE username = ?";

@@ -34,6 +34,32 @@ public class Cliente {
     @Column(name = "estado_conta")
     private String estadoConta;
 
+    public Cliente() {
+        // Empty constructor required by JPA
+    }
+
+    public Cliente(Integer idCliente, String nome, String contacto, String morada, String email, String nif, String username, String estadoConta) {
+        this.idCliente = idCliente;
+        this.nome = nome;
+        this.contacto = contacto;
+        this.morada = morada;
+        this.email = email;
+        this.nif = nif;
+        this.username = username;
+        this.estadoConta = estadoConta;
+    }
+
+    public Cliente(String nome, String contacto, String morada, String email, String nif, String username,String password, String estadoConta) {
+        this.nome = nome;
+        this.contacto = contacto;
+        this.morada = morada;
+        this.email = email;
+        this.nif = nif;
+        this.username = username;
+        this.password = password;
+        this.estadoConta = estadoConta;
+    }
+
     public int getIdCliente() {
         return idCliente;
     }

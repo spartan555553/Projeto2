@@ -45,6 +45,13 @@ public class MainMenu {
         switchScene(event);
     }
 
+    //Funcionarios Button
+    @FXML
+    public void handleFuncionariosButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/ListarFuncionarios.fxml"));
+        switchScene(event);
+    }
+
     //Fornecedores Button
     @FXML
     public void handleFornecedoresButton(ActionEvent event) throws IOException {
@@ -56,6 +63,13 @@ public class MainMenu {
     @FXML
     public void handleTransportadorasButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/fxml/ListarTransportadoras.fxml"));
+        switchScene(event);
+    }
+
+    //Clientes Button
+    @FXML
+    public void handleClientesButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/ListarClientes.fxml"));
         switchScene(event);
     }
 
