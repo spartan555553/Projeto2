@@ -103,6 +103,33 @@ public class ListarClientes implements Initializable {
         }
     }
 
+    @FXML
+    public void handleDeactivateButton(ActionEvent event) {
+        Cliente selectedCliente = ClienteView.getSelectionModel().getSelectedItem();
+
+        if (selectedCliente != null) {
+            DatabaseConnection connection = new DatabaseConnection();
+            String updateSql = "UPDATE cliente SET estado_conta = ? WHERE id_cliente = ?;";
+
+            try (Connection conn = connection.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(updateSql)) {
+
+                String previousEstadoConta = selectedCliente.getEstadoConta();
+                String newEstadoConta = previousEstadoConta.equals("Ativo") ? "Inativo" : "Ativo";
+
+                stmt.setString(1, newEstadoConta);
+                stmt.setInt(2, selectedCliente.getIdCliente());
+                stmt.executeUpdate();
+
+                selectedCliente.setEstadoConta(newEstadoConta);
+                refreshData();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                connection.closeConnection();
+            }
+        }
+    }
     private void refreshData() {
         DatabaseConnection connection = new DatabaseConnection();
         String sql = "SELECT * FROM cliente";

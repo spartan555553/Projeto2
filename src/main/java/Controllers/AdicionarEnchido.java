@@ -55,9 +55,9 @@ public class AdicionarEnchido implements Initializable {
 
     private void populateFaseProducaoDropdown() {
         ObservableList<String> faseProducaoOptions = FXCollections.observableArrayList(
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Preparação",
+                "Cura",
+                "Fumagem"
         );
         faseProducaoDropdown.setItems(faseProducaoOptions);
     }

@@ -99,7 +99,7 @@ public class ListarPedidosCliente implements Initializable {
                         rs.getInt("id_cliente"),
                         rs.getDate("data_pedido"),
                         rs.getString("estado_pedido"),
-                        preco,
+                        precoLiquido,
                         rs.getDate("data_entrega")
                 );
 

@@ -48,7 +48,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="nifFeld" layoutX="445.0" layoutY="105.0" prefHeight="27.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+      <TextField fx:id="nifField" layoutX="445.0" layoutY="105.0" prefHeight="27.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
       <Label layoutX="281.0" layoutY="71.0" text="Telefone">
          <font>
             <Font size="24.0" />
